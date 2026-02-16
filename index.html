@@ -1,0 +1,90 @@
+<!-- Figtree (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  
+
+
+
+
+  <!-- WORDMARK HEADER -->
+  <div class="brandbar">
+    <div class="brandinner">
+      <img src="willowly-wordmark.png" alt="Willowly" class="wordmark">
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div class="card">
+      <div class="hero">
+        <h1>Enter the monthly prize draw</h1>
+        <p class="sub">
+          Share a few details and go in the draw to win <strong>one month’s supply</strong> of replacement TENS pads.
+        </p>
+      </div>
+
+      <form class="form" id="willowlyForm"
+            action="https://script.google.com/macros/s/AKfycbyd-7X4xUWQPGedgJLwkOVh0s_k9SF5GnWfFNR9EkdL-rW5Fh_e_E5z6WijnIacnW3PFQ/exec"
+            method="POST" novalidate>
+
+        <!-- Honeypot -->
+        <div style="position:absolute; left:-9999px;">
+          <input type="text" name="website" autocomplete="off">
+        </div>
+        <input type="hidden" name="started_at" id="started_at">
+        <input type="hidden" name="source" value="qr-packaging">
+
+        <div>
+          <label>Name</label>
+          <input class="field" id="name" type="text" required>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input class="field" id="email" type="email" required>
+        </div>
+
+        <div>
+          <label>Where are you using your TENS device today?</label>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="body_part" value="Back">Back</label>
+            <label class="chip"><input type="radio" name="body_part" value="Shoulder">Shoulder</label>
+            <label class="chip"><input type="radio" name="body_part" value="Neck">Neck</label>
+            <label class="chip"><input type="radio" name="body_part" value="Knee">Knee</label>
+            <label class="chip"><input type="radio" name="body_part" value="Hip">Hip</label>
+            <label class="chip"><input type="radio" name="body_part" value="Foot/Ankle">Foot/Ankle</label>
+            <label class="chip"><input type="radio" name="body_part" value="Arm/Wrist">Arm/Wrist</label>
+            <label class="chip"><input type="radio" name="body_part" value="Other">Other</label>
+          </div>
+        </div>
+
+        <div>
+          <label>We have opportunities for paid research interviews. Interested?</label>
+          <div class="toggle">
+            <label class="chip"><input type="radio" name="research_ok" value="Yes">Yes</label>
+            <label class="chip"><input type="radio" name="research_ok" value="No">No</label>
+          </div>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary" type="submit">Enter the prize draw</button>
+
+          <div class="success" id="successBox">
+            ✅ You’re in. <strong>Good luck!</strong><br>
+            We’ll email the monthly winner.
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <footer id="privacy">
+      <p class="fineprint">
+        <strong>Privacy note:</strong> We will store your name, email, selected body area, and research-contact preference for the purposes of the prize draw and (if you said yes) contact you about paid research opportunities.
+      </p>
+      <p class="fineprint">
+        <strong>Disclaimer:</strong> Willowly products are not intended to diagnose, treat, cure, or prevent any disease. If you have a medical condition or concerns, seek advice from a qualified health professional.
+      </p>
+    </footer>
+  </main>
