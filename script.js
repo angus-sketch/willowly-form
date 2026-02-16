@@ -2,8 +2,6 @@ const form = document.getElementById("willowlyForm");
     const successBox = document.getElementById("successBox");
     const submitBtn = form.querySelector("button");
 
-    document.getElementById("started_at").value = Date.now();
-
     function isValidEmail(email){
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
@@ -29,14 +27,10 @@ const form = document.getElementById("willowlyForm");
         email,
         body_part: bodyPart,
         research_ok: researchOk,
-        website: form.querySelector('input[name="website"]').value,
-        started_at: Number(document.getElementById("started_at").value),
-        source: "qr-packaging",
-        user_agent: navigator.userAgent
       };
 
       try{
-        const res = await fetch(form.action, {
+        const res = await fetch(`${sheet_url}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
@@ -48,7 +42,6 @@ const form = document.getElementById("willowlyForm");
           successBox.style.display = "block";
           successBox.scrollIntoView({behavior:"smooth", block:"center"});
           form.reset();
-          document.getElementById("started_at").value = Date.now();
         } else {
           alert("Something went wrong. Please try again.");
         }
