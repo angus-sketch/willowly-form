@@ -1,0 +1,203 @@
+:root{
+      --bg: #f7f6f4;
+      --surface: #ffffff;
+
+      --primary: #95b193;
+      --text: #1f352a;
+
+      --muted: rgba(31,53,42,.70);
+      --line: rgba(31,53,42,.14);
+      --danger: #b42318;
+      --radius: 18px;
+      --shadow: 0 12px 34px rgba(0,0,0,.08);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{
+      margin:0; padding:0;
+      font-family:"Figtree", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap{
+      width: min(560px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 40px;
+    }
+
+    /* ---------- WORDMARK HEADER ---------- */
+
+    .brandbar{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 16px 0;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(31,53,42,.08);
+    }
+
+    .brandinner{
+      width: min(560px, calc(100% - 32px));
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .wordmark{
+      height: 30px;
+      width: auto;
+      max-width: 80%;
+      display: block;
+    }
+
+    /* ---------- CARD ---------- */
+
+    .card{
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 20px 20px 16px;
+      background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--primary) 20%, #fff 80%),
+        #fff
+      );
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1{
+      margin: 0 0 8px;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .form{
+      padding: 18px 20px 20px;
+      display:grid;
+      gap: 16px;
+      position: relative;
+    }
+
+    label{
+      display:block;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .field{
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      padding: 13px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .field:focus{
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 35%, transparent);
+    }
+
+    /* Chips */
+
+    .chips{
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+
+    .chip{
+      position: relative;
+      display:inline-flex;
+      align-items:center;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      user-select:none;
+    }
+
+    .chip input{
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .chip:has(input:checked){
+      border-color: var(--primary);
+      background: color-mix(in srgb, var(--primary) 22%, #fff 78%);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 30%, transparent);
+      font-weight: 600;
+    }
+
+    .toggle{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    /* CTA */
+
+    .cta{
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      display:grid;
+      gap: 10px;
+    }
+
+    .btn{
+      border: 0;
+      width: 100%;
+      border-radius: 999px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-primary{
+      background: var(--text);
+      color: #fff;
+    }
+
+    .btn[disabled]{
+      opacity: .75;
+      cursor: not-allowed;
+    }
+
+    .success{
+      display:none;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid color-mix(in srgb, var(--primary) 45%, var(--line) 55%);
+      background: color-mix(in srgb, var(--primary) 18%, #fff 82%);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    footer{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
